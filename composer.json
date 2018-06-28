@@ -2,14 +2,16 @@
     "name": "srimaln91/rackspace-cloud-container-download",
     "authors": [
         {
-            "name": "Srimaln91",
-            "email": "srimal@3cs.lk"
+            "name": "Srimal Nishantha",
+            "email": "srimaln91@gmail.com"
         }
     ],
+    "license": "MIT",
     "description": "A console application to download rackspace cloud bucket",
     "require": {
+        "php": ">=7.0",
         "rackspace/php-opencloud": "^1.16",
-        "symfony/console": "^4.1"
+        "symfony/console": "^3.3"
     },
     "autoload": {
         "psr-4": {"App\\": "src"}
