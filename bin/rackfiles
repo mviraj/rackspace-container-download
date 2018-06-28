@@ -1,9 +1,6 @@
 #!/usr/bin/env php
 <?php
 
-use Symfony\Component\Console\Application;
-use App\Command\ContainerDownloadCommand;
-
 // Detect source location
 $autoload = [
     __DIR__ . '/../../../autoload.php',
@@ -25,9 +22,5 @@ if (!$loaded) {
     );
 }
 
-$application = new Application();
-
-// Register fownload command
-$application->add(new ContainerDownloadCommand());
-
-$application->run();
+//Include application bootstrap file
+include __DIR__ . '/../bootstrap.php';

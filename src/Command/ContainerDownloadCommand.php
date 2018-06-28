@@ -3,6 +3,7 @@
 // src/Command/ContainerDownloadCommand.php
 namespace App\Command;
 
+use Monolog\Logger;
 use App\RackFiles\RackAuth;
 use App\RackFiles\DownloadOperations;
 
@@ -13,6 +14,24 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ContainerDownloadCommand extends Command
 {
+    /**
+     * Application logger interface
+     *
+     * @var Logger
+     */
+    private $logger;
+
+    /**
+     * Command constructor
+     *
+     * @param Logger $logger
+     */
+    public function __construct(Logger $logger)
+    {
+        parent::__construct();
+        $this->logger = $logger;
+    }
+
     protected function configure()
     {
         $this
@@ -43,6 +62,7 @@ class ContainerDownloadCommand extends Command
             $savePath = '~/Desktop';
         }
 
+        $this->logger->info('Startted : '. $savePath);
         $downloadService->download($container, $savePath);
     }
 }
