@@ -6,7 +6,7 @@
             "email": "srimaln91@gmail.com"
         }
     ],
-    "license": "GPL",
+    "license": "GPL-3.0-only",
     "description": "A console application to download rackspace cloud bucket",
     "require": {
         "php": ">=7.0",
